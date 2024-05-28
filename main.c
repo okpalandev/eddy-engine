@@ -1,3 +1,5 @@
+
+
 #include <SDL2/SDL.h>
 #include <stdio.h>
 #include <stdbool.h>
@@ -11,7 +13,7 @@ const int SCREEN_HEIGHT = 480;
 int main() {
     SDL_Window* window = NULL;
     SDL_Surface* screenSurface = NULL;
-
+    
     // Initialize SDL
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         printf("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
@@ -30,7 +32,7 @@ int main() {
     screenSurface = SDL_GetWindowSurface(window);
 
     // Fill the surface white
-    SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0xFF, 0xFF, 0xFF));
+    SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0x0B, 0x6C, 0xFF));
 
     // Update the surface
     SDL_UpdateWindowSurface(window);
