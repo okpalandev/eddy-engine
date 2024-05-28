@@ -1,0 +1,67 @@
+{
+    "width": 640,
+    "height": 480,
+    "camera": {
+        "position": [
+            0,
+            0,
+            5
+        ],
+        "look_at": [
+            0,
+            0,
+            0
+        ],
+        "up": [
+            0,
+            1,
+            0
+        ],
+        "fov": 45,
+        "width": 640,
+        "height": 480
+    },
+    "objects": [
+        {
+            "type": "sphere",
+            "center": {
+                "x": 0,
+                "y": 0,
+                "z": 0 
+            },    
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "radius": 1,
+            "color": [
+                255,
+                0,
+                0
+            ],
+            "material": {
+                "ambient": 0.1,
+                "diffuse": 0.6,
+                "specular": 0.3,
+                "shininess": 10
+            }
+        }
+    ],
+    "lights": [
+        {
+            "type": "ambient",
+            "color": [
+                255,
+                255,
+                255
+            ],
+            "position":{
+                "x": 0,
+                "y": 0,
+                "z": 0
+            }
+
+        }
+    ]
+}
