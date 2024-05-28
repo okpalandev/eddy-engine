@@ -6,4 +6,4 @@
 ```bash
 $ make all CC=gcc
 ```
-### Compling the Project on Linux/Window:
+### Compling the Project on:
