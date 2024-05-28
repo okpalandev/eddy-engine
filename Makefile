@@ -22,18 +22,22 @@ OBJ_FILES=$(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC_FILES))
 all: bin/eddyengine
 
 bin/eddyengine: $(OBJ_FILES)
-	@mkdir -p $(dir $@)
 ifeq ($(OS),Windows_NT)
 	$(CC) /c main.c $(OBJ_FILES) $(LDFLAGS) /out:$@
 else
 	$(CC) main.c $(OBJ_FILES) $(LDFLAGS) -o $@
+	@mkdir -p $(dir $@)
 endif
 
 # Define compilation rule for object files
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	@mkdir -p $(OBJ_DIR)
+ifeq ($(OS),Windows_NT)
+#	@mkdir $(dir $@)
+	$(CC) /c $(CFLAGS) /Fo$@ $<
+else
+	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -o $@ -c $<
-
+endif
 # Clean up generated files
 clean:
 	rm -f $(OBJ_DIR)/*.o $(OBJ_DIR)/*.d bin/eddyengine

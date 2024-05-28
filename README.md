@@ -6,7 +6,8 @@
 ```bash
 $ make all CC=gcc
 ```
-### Compling the Project on Windows using `cl`:
+### If you have cl, or Microsoft Developer Command Prompt
+### You can compile the project on windows using the command.
 ```bash
-$ make all CC=cl
+$ make all
 ```
