@@ -6,7 +6,7 @@ ifeq ($(OS),Windows_NT)
     SRC_DIR=src
     OBJ_DIR=obj
     CFLAGS=/I $(SRC_DIR) /W3 /WX /Zi /Od /MD /MP
-    LDFLAGS=/link /LIBPATH:'lib/' SDL2.dll #  SDL2.lib SDL2main.lib
+    LDFLAGS=/link /LIBPATH:'./lib/' SDL2.dll  SDL2.lib SDL2main.lib
 else
     CC=gcc
     SRC_DIR=src
@@ -16,7 +16,7 @@ else
 endif
 
 SRC_FILES=$(wildcard $(SRC_DIR)/*.c)
-OBJ_FILES=$(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC_FILES))
+OBJ_FILES := $(SRC_FILES:$(SRC_DIR)/%.h=$(OBJ_DIR)/%.o)
 
 # Define target executable
 all: bin/eddyengine
